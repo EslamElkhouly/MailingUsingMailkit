@@ -1,0 +1,28 @@
+﻿@model MailingUsingMailkit.Models.MailViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Send E-mail</h1>
+
+
+<form method="post" enctype="multipart/form-data" asp-action="Send" asp-controller="Mail">
+
+    <input type="text" asp-for="To" placeholder="Send To" class="form-control" />
+    <br />
+    <br />
+    <input type="text" asp-for="subject" placeholder="Subject" class="form-control" />
+    <br />
+    <br />
+
+<textarea asp-for="Body" rows="4" placeholder="Body of E-mail" class="form-control"></textarea>
+    <br />
+    <br />
+    <input type="file" asp-for="Attachments" class="custom-file-input" multiple />
+    <br />
+    <br />
+    <input type="submit" value="Send" class="btn btn-primary" />
+
+</form>
+
