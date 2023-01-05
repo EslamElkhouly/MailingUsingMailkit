@@ -25,7 +25,7 @@ namespace MailingUsingMailkit.Controllers
                 await mailServices.SendAsync(model.To, model.subject, model.Body, model.Attachments);
 
                 return RedirectToAction("Index", "Home");
-            }
+            } 
             catch (Exception)
             {
 
